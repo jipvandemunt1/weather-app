@@ -24,7 +24,9 @@ let data;
 input.addEventListener("keydown", async function (e) {
   if (e.key === "Enter") {
     data = await fetchData(input.value);
-    displayInformation(data);
+    if (data) {
+      displayInformation(data);
+    }
 
     // Clear input
     input.value = "";
